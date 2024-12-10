@@ -1,0 +1,29 @@
+<% include('../partials/_navbar') %>
+<h1>Edit Car Listing</h1>
+<form action="/cars/<%= car._id %>?_method=PUT" method="post" enctype="multipart/form-data">
+  <label for="manufacturer">Manufacturer:</label>
+  <input type="text" name="manufacturer" value="<%= car.manufacturer %>" required />
+  <br />
+  <label for="model">Model:</label>
+  <input type="text" name="model" value="<%= car.model %>" required />
+  <br />
+  <label for="year">Year:</label>
+  <input type="number" name="year" value="<%= car.year %>" min="2000" required />
+  <br />
+  <label for="plate">License Plate:</label>
+  <input type="text" name="plate" value="<%= car.plate %>" required />
+  <br />
+  <label for="price">Price per Day:</label>
+  <input type="number" name="price" value="<%= car.price %>" min="0" required />
+  <br />
+  <label for="availability">Available:</label>
+  <select name="availability" required>
+    <option value="true" <%= car.availability ? 'selected' : '' %>>Yes</option>
+    <option value="false" <%= car.availability ? '' : 'selected' %>>No</option>
+  </select>
+  <br />
+  <label for="carImage">Update Car Image:</label>
+  <input type="file" name="carImage" accept="image/*" />
+  <br />
+  <button type="submit">Update Car</button>
+</form>

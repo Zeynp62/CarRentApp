@@ -1,0 +1,18 @@
+<% include('../partials/_navbar') %>
+<h1><%= car.manufacturer %> <%= car.model %> (<%= car.year %>)</h1>
+<p>License Plate: <%= car.plate %></p>
+<p>Price: $<%= car.price %> per day</p>
+<p>Available: <%= car.availability ? 'Yes' : 'No' %></p>
+<% if (car.image) { %>
+<img
+  src="../uploads/<%=car.image%>"
+  alt="<%= car.manufacturer %> <%= car.model %>"
+/>
+<% } %> <% if (user && String(user._id) === String(car.user._id)) { %>
+<a href="/cars/<%= car._id %>/edit">Edit</a>
+<form action="/cars/<%= car._id %>?_method=DELETE" method="post">
+  <button type="submit">Delete</button>
+</form>
+<% } else if (car.availability) { %>
+<a href="/rentals/rent/<%= car._id %>">Rent</a>
+<% } %>

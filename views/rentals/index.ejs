@@ -1,0 +1,13 @@
+<%- include('../partials/_navbar') %>
+<h1>Your Rentals</h1>
+<% rentals.forEach(rental => { %>
+<div>
+  <h2>Car: <%= rental.car.manufacturer %> <%= rental.car.model %></h2>
+  <p>From: <%= rental.startDate.toDateString() %></p>
+  <p>To: <%= rental.endDate.toDateString() %></p>
+  <p>Total Cost: $<%= rental.totalCost %></p>
+  <form action="/rentals/<%= rental._id %>?_method=DELETE" method="post">
+    <button type="submit">Cancel Rental</button>
+  </form>
+</div>
+<% }) %>

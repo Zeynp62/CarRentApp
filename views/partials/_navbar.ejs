@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <head>
   <!-- Add Bootstrap CSS -->
   
@@ -44,3 +45,15 @@
 <!-- Add Bootstrap JavaScript (for functionality like navbar toggling) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 ></script>
+=======
+<% if (user) {%>
+<a href="/auth/profile">Edit Profile</a>
+<a href="/cars">View Cars</a>
+<a href="/cars/new">List a Car</a>
+<a href="/rentals">My Rentals</a>
+<a href="/auth/sign-out">Sign out</a>
+<%} else {%>
+<a href="/auth/sign-up">Sign up</a>
+<a href="/auth/sign-in">Sign in</a>
+<%}%>
+>>>>>>> e6ff18603a0488873a9411a12affc12e55e2cd29

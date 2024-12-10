@@ -1,0 +1,11 @@
+<% include('../partials/_navbar') %>
+<h1>Rent <%= car.manufacturer %> <%= car.model %></h1>
+<form action="/rentals/rent/<%= car._id %>" method="post">
+  <label for="startDate">Start Date:</label>
+  <input type="date" name="startDate" required />
+  <br />
+  <label for="endDate">End Date:</label>
+  <input type="date" name="endDate" required />
+  <br />
+  <button type="submit">Rent</button>
+</form>
