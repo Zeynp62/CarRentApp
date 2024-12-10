@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-  <body>
     <% include('../partials/_navbar') %>
 <h1>edit your profile</h1>
 
@@ -16,28 +14,4 @@
 
   <button type="submit">Edit</button>
 </form>
-</body>
-=======
-<% include('../partials/_navbar.ejs') %>
-<h1>Edit Profile</h1>
-<form action="/auth/profile" method="post">
-  <label>Username:</label>
-  <input type="text" name="username" value="<%= user.username %>" />
-  <br />
-  <label>Email:</label>
-  <input type="email" name="email" value="<%= user.email %>" />
-  <br />
-  <label>Phone:</label>
-  <input type="text" name="phone" value="<%= user.phone %>" />
-  <br />
-  <button type="submit">Update</button>
-</form>
-<form action="/auth/delete-account?_method=DELETE" method="post">
-  <button
-    type="submit"
-    onclick="return confirm('Are you sure you want to delete your account?');"
-  >
-    Delete Account
-  </button>
-</form>
->>>>>>> e6ff18603a0488873a9411a12affc12e55e2cd29
+

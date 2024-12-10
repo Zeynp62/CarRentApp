@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt')
 const isSignedIn = require('../middleware/is-signed-in')
 const upload = require('../middleware/upload')
 const User = require('../models/user')
-const isSignedIn = require('../middleware/is-signed-in')
 //routes/API's/ Controller Functions
 router.get('/sign-up', (req, res) => {
   res.render('auth/sign-up.ejs')
@@ -56,7 +55,6 @@ router.get('/sign-out', (req, res) => {
   res.redirect('/')
 })
 
-
 router.get('/profile', async (req, res) => {
   try {
     const userId = req.session.user._id
@@ -79,17 +77,17 @@ router.post('/profile', async (req, res) => {
     const userId = req.session.user._id
     const { username, email, phone } = req.body
 
-    
-    await User.findByIdAndUpdate(userId, { username, email, phone }, { new: true })
+    await User.findByIdAndUpdate(
+      userId,
+      { username, email, phone },
+      { new: true }
+    )
 
-    
     res.redirect('/auth/profile')
   } catch (error) {
     console.log(error)
     res.status(500).send('An error occurred while updating the profile')
   }
 })
-
-
 
 module.exports = router

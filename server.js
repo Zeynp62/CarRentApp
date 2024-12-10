@@ -9,10 +9,6 @@ const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const morgan = require('morgan')
 app.set('view engine', 'ejs')
-<<<<<<< HEAD
-
-=======
->>>>>>> e6ff18603a0488873a9411a12affc12e55e2cd29
 
 // port config
 const PORT = process.env.PORT ? process.env.PORT : '3000'
