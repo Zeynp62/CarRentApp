@@ -32,8 +32,8 @@ app.use(
   })
 )
 app.use(express.static('public'))
-
 app.use(passUserToView)
+
 //Require Controllers
 const authCtrl = require('./controllers/auth')
 const isSignedIn = require('./middleware/is-signed-in')

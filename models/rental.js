@@ -1,18 +1,19 @@
 const mongoose = require('mongoose');
 
-// Reference to User and Car schemas
+//References for user and car schemas
 const User = require('./user');
 const Car = require('./car');
 
-const rentalSchema = new mongoose.Schema({
+const rentalSchema = new mongoose.Schema(
+{
   user: {
-    type: mongoose.Schema.Types.ObjectId, // Reference to User model
-    ref: 'User', // This tells mongoose to refer to the User collection
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
     required: true,
   },
   car: {
-    type: mongoose.Schema.Types.ObjectId, // Reference to Car model
-    ref: 'Car', // This tells mongoose to refer to the Car collection
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Car',
     required: true,
   },
   startDate: {
